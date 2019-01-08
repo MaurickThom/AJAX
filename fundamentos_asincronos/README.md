@@ -8,4 +8,11 @@ La concurrencia y paralelismo son conceptos llevados de la mano pero defieren en
 - Paralelismo : Cuando dos o mas tareas se ejecutan , literalmente , a la misma vez.
 
 La diferencia se puede notar en la palabra `progresen` , ya que esto significara que varios procesos se estan ejecutando pero no exactamente al mismo tiempo es decir , el proceso A esta apunto de terminar y pero el proceso B que tambien esta activo pero le falta mucho para terminar.
-En cambio el paralelismo es un subcaso de la concurrencia que signicará que se ejecutaran al mismo tiempo y que se terminaran al mismo tiempo
+En cambio el paralelismo es un subcaso de la concurrencia que signicará que se ejecutaran al mismo tiempo y que se terminaran al mismo tiempo.
+
+Personalmente he creido que al hablar de concurrencia en cualquier lenguaje de programacion , yo viniendo de java ,implica necesariamente hablar mas de un thread o hilo. Pero estudiando a profundidad veo que no es cierto.
+
+### Entrelazado (multiplexado)
+Es un mecanismo común para implementar concurrencia en escenarios donde los recursos son limitados 
+<br>Ejm :<br>
+Un sistema operativo haciendo multiples tareas con un solo nucleo ,core . Simplemente divide las tareas en tareas mas pequeñas y las entrelaza, de modo que cada una de ellas se ejecutara en un breve instante
