@@ -15,4 +15,5 @@ Personalmente he creido que al hablar de concurrencia en cualquier lenguaje de p
 ### Entrelazado (multiplexado)
 Es un mecanismo común para implementar concurrencia en escenarios donde los recursos son limitados 
 <br>Ejm :<br>
-Un sistema operativo haciendo multiples tareas con un solo nucleo ,core . Simplemente divide las tareas en tareas mas pequeñas y las entrelaza, de modo que cada una de ellas se ejecutara en un breve instante
+Un sistema operativo haciendo multiples tareas con un solo nucleo ,core . Simplemente divide las tareas en tareas mas pequeñas y las entrelaza, de modo que cada una de ellas se ejecutara en un breve instante.
+![explicacion](https://static1.squarespace.com/static/56cdb491a3360cdd18de5e16/t/5a719d69f9619acaaa9943b6/1517395309058/concurrency_es.png?format=1000w)
