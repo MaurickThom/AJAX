@@ -15,6 +15,9 @@ document.getElementById('btn').addEventListener('click',e=>{
     xhttp.onreadystatechange = function(){
         if(this.readyState=== 4 && this.status===200){
             console.log(this.responseText)
+            let p = document.createElement('p')
+            p.innerHTML=`<p>${this.responseText}</p>`
+            document.body.appendChild(p)
         }
     }
 })
