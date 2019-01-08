@@ -5,5 +5,12 @@
 // peiition HTTP al servidor
 document.querySelector('#btn').addEventListener('click',e=>{
     console.log('Función activada')
-    let xhttp = new XMLHttpRequest()
+    const xhttp = new XMLHttpRequest() //instanciando esta clase para poder realizar la peticion al servidor
+    
+    xhttp.open('GET','ajax/archivo.txt',true)
+    xhttp.send()
+
+    xhttp.onreadystatechange = ()=>{
+        
+    }
 })
