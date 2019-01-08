@@ -3,15 +3,16 @@
  */
 
 // peiition HTTP al servidor
-document.getElementById('btn').addEventListener('click',()=>{
+document.getElementById('btn').addEventListener('click',e=>{
     console.log('Función activada')
-    let xhttp = new XMLHttpRequest() //instanciando esta clase para poder realizar la peticion al servidor
+    // e.preventDefault()
+    const xhttp = new XMLHttpRequest() //instanciando esta clase para poder realizar la peticion al servidor
     
-    xhttp.open('GET','archivo.txt',true) ;
+    xhttp.open('GET','archivo.txt',true)
 
     xhttp.send()
 
-    xhttp.onreadystatechange = ()=>{
+    xhttp.onreadystatechange = function(){
         if(this.readyState=== 4 && this.status===200){
             console.log(this.responseText)
         }
