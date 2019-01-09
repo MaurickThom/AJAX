@@ -12,7 +12,7 @@
     - 4 : solicitud finalizada y la respuesta esta lista
 - responseText :  retorna el dato de la respuesta en formato string
 - status : retorna el numero del estado de la solictud
-    - 200 :
-    - 403 :
-    - 404 :
+    - 200 : Todo correcto
+    - 403 : Prohibido
+    - 404 : No encontrado
     - [Mas referencias](https://www.w3schools.com/tags/ref_httpmessages.asp)
