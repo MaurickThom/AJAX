@@ -5,11 +5,33 @@ const obtenerDatos = ()=>{
     api.send()
     api.onreadystatechange = function(){
         if(this.status===200 && this.readyState===4){
-            console.log(this.responseText)
+            let json = JSON.parse(this.responseText)
+            console.log(json.serie)
         }
     }
 
 }
 document.getElementById('btn').addEventListener('click',e=>{
-    obtenerDatos()
-})
+    // obtenerDatos()
+    (()=>{
+        let url = `https://mindicador.cl/api/dolar`
+        const api = new XMLHttpRequest()
+        api.open('GET',url,true)
+        api.send()
+        api.onreadystatechange = function(){
+            if(this.status===200 && this.readyState===4){
+                let json = JSON.parse(this.responseText)
+                console.log(json.serie)
+                let element =document.createElement('div')
+                
+                
+                document.body.appendChild(element)
+            }
+        }
+    })()
+});
+
+// // funciones autoejecutables necesita un ; al final de cada funcion
+// ((nombre)=>{
+//     console.log(`Hola  ${nombre}`);
+// })('Thom');
