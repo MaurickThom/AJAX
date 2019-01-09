@@ -24,10 +24,10 @@ document.getElementById('btn').addEventListener('click',e=>{
                 console.log(json)
                 let elemento = document.getElementById('api')
                 elemento.innerHTML=''
-                json.map(e => {
+                json.forEach(e => {
                     elemento.innerHTML+=`
                         <li>
-                            ${e}
+                            ${e.fecha} | ${e.valor}
                         </li>
                     `
                 })
