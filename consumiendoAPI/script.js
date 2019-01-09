@@ -11,10 +11,11 @@ const obtenerDatos = ()=>{
     }
 
 }
-document.getElementById('btn').addEventListener('click',e=>{
+document.querySelector('.container').addEventListener('click',e=>{
     // obtenerDatos()
-    (()=>{
-        let url = `https://mindicador.cl/api/dolar`
+    
+    ((nombre)=>{
+        let url = `https://mindicador.cl/api/${nombre}`
         const api = new XMLHttpRequest()
         api.open('GET',url,true)
         api.send()
@@ -24,17 +25,17 @@ document.getElementById('btn').addEventListener('click',e=>{
                 console.log(json)
                 let elemento = document.getElementById('api')
                 elemento.innerHTML=''
-                json.forEach(e => {
+                json.forEach(el => {
                     elemento.innerHTML+=`
                         <li>
-                            ${e.fecha} | ${e.valor}
+                            ${el.fecha} | ${el.valor}
                         </li>
                     `
                 })
                 
             }
         }
-    })()
+    })(e.target.id)
 });
 
 // // funciones autoejecutables necesita un ; al final de cada funcion
