@@ -20,12 +20,18 @@ document.getElementById('btn').addEventListener('click',e=>{
         api.send()
         api.onreadystatechange = function(){
             if(this.status===200 && this.readyState===4){
-                let json = JSON.parse(this.responseText)
-                console.log(json.serie)
-                let element =document.createElement('div')
+                let json = JSON.parse(this.responseText).serie
+                console.log(json)
+                let elemento = document.getElementById('api')
+                elemento.innerHTML=''
+                json.map(e => {
+                    elemento.innerHTML+=`
+                        <li>
+                            ${e}
+                        </li>
+                    `
+                })
                 
-                
-                document.body.appendChild(element)
             }
         }
     })()
