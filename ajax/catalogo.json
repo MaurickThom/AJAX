@@ -2,15 +2,15 @@
     "catalogo":[
         {
             "titulo":"Titulo 1",
-            "artista":"Artista 1"
+            "artista":"Thom"
         },
         {
             "titulo":"Titulo 2",
-            "artista":"Artista 2"
+            "artista":"Juan"
         },
         {
             "titulo":"Titulo 3",
-            "artista":"Artista 3"
+            "artista":"Carlos"
         }
     ]
 }
