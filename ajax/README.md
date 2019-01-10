@@ -3,7 +3,7 @@
 
 
 ### **Propiedades del objeto XMLHttpRequest**
-- `onreadystatechange` : define un callback cuando la propiedad readyState cambia
+- `onreadystatechange` : define un callback cuando la propiedad readyState cambia , mapea el estado de lña solicitud
 - readyState : Sostiene el estado del objeto XMLHttpRequest
     - 0 : solicitud no inicializa
     - 1 : conexion con el servidor establecida
