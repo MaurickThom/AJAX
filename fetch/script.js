@@ -7,7 +7,6 @@ const btnEvent = container=>{
             then(data=>{
                 console.log(data)
                 let elementoInterno = container.querySelector('#parrafo')
-                elementoInterno.innerHTML=``
                 elementoInterno.innerHTML=`<p>${data}</p>`
                 
             })
@@ -16,8 +15,14 @@ const btnEvent = container=>{
             fetch('https://randomuser.me/api/').
             then(data=>data.json()). // transformando a un archivo text
             then(data=>{
-                console.log(data)
-                
+                let user = data.results[0]
+                console.log(user)
+                let elementoIner = container.querySelector('#container-user__captura')
+                elementoIner.innerHTML=`
+                    <img src = "${user.picture.thumbnail}">
+                    <p>${user.name.first}</p>
+                `
+                console.log(elementoIner)
             })
         }
     })
