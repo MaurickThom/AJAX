@@ -1,7 +1,7 @@
 const btnEvent = container=>{
     container.addEventListener('click',(e)=>{
         let element = e.target
-        if(element.tagName==='BUTTON'){
+        if(element.id==='btn'){
             fetch('archivo.txt').
             then(data=>data.text()). // transformando a un archivo text
             then(data=>{
@@ -11,7 +11,14 @@ const btnEvent = container=>{
                 elementoInterno.innerHTML=`<p>${data}</p>`
                 
             })
-
+        }
+        if(element.id==='fetch'){
+            fetch('https://randomuser.me/api/').
+            then(data=>data.json()). // transformando a un archivo text
+            then(data=>{
+                console.log(data)
+                
+            })
         }
     })
 }
