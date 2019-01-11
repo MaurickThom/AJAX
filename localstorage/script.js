@@ -33,10 +33,17 @@ const pintar = ()=>{
         arrayActividades=[]
     }else{
         arrayActividades.forEach(element => {
-            console.log(element)
             listaActividadUI.innerHTML=generarHTML(listaActividadUI,element)
         });
     }
+}
+const editarDB = (actividad)=>{
+    let indexArray  = arrayActividades.findIndex((element)=>element.actividad===actividad)
+    console.log(indexArray)
+    arrayActividades[indexArray].estado=true
+    guardarDB()
+    console.log(arrayActividades[indexArray].estado)
+    pintar()
 }
 
 const eliminarDB = (actividad)=>{
@@ -67,10 +74,9 @@ const containerEvent = container=>{
         let i = e.target
         if(i.id==='aprobar'){
             let l= e.path[1].firstElementChild.innerHTML.trim()
-            console.log(l)
+            editarDB(l)
         }else if(i.id==='borrar'){
             let l= e.path[1]
-            console.log(l)
             eliminarDB(l)
         }
         
