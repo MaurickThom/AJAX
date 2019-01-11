@@ -63,7 +63,7 @@ const containerEvent = container=>{
         e.preventDefault()
         let texto = container.querySelector('#actividad')
         if(texto.value!==''){
-            let actividad = crearItem(texto.value)
+            let actividad = crearItem(texto.value.trim())
             guardarDB()
             formularioUI.reset()
             listaActividadUI.innerHTML=generarHTML(listaActividadUI,actividad)
@@ -73,7 +73,7 @@ const containerEvent = container=>{
         e.preventDefault()
         let i = e.target
         if(i.id==='aprobar'){
-            let l= e.path[1].firstElementChild.innerHTML.trim()
+            let l= e.path[1].firstElementChild.innerHTML
             editarDB(l)
         }else if(i.id==='borrar'){
             let l= e.path[1]
