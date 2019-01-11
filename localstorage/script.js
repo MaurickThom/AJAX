@@ -15,6 +15,17 @@ const guardarDB = ()=>{
     localStorage.setItem('items',JSON.stringify(arrayActividades))
 
 }
+
+const generarHTML = (container,actividad)=>{
+    container.innerHTML+=`
+        <div>
+            Actividad : <b>${actividad.actividad}</b> , estado : ${actividad.estado}
+            <span id="aprobar">Aprobar</span> : 
+            <span id="borrar">Borrar</span>
+        </div>
+    `
+    return container.innerHTML
+}
 const containerEvent = container=>{
     container.addEventListener('submit',e=>{
         e.preventDefault()
@@ -23,13 +34,7 @@ const containerEvent = container=>{
             let actividad = crearItem(texto.value)
             guardarDB()
             formularioUI.reset()
-            listaActividadUI.innerHTML+=`
-                <div>
-                Actividad : <b>${actividad.actividad}</b> , estado : ${actividad.estado}
-                <span id="aprobar">Aprobar</span> : 
-                <span id="borrar">Borrar</span>
-                </div>
-            `
+            listaActividadUI.innerHTML=generarHTML(listaActividadUI,actividad)
         }
     })
     listaActividadUI.addEventListener('click',e=>{
@@ -52,13 +57,7 @@ document.addEventListener('DOMContentLoaded',e=>{
     }else{
         arrayActividades.forEach(element => {
             console.log(element)
-            listaActividadUI.innerHTML+=`
-                <div>
-                Actividad :  <b>${element.actividad}</b> , estado : ${element.estado}
-                <span id="aprobar">Aprobar</span> : 
-                <span id="borrar">Borrar</span>
-                </div>
-            `
+            listaActividadUI.innerHTML=generarHTML(listaActividadUI,element)
         });
     }
 
