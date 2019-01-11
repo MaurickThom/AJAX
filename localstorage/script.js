@@ -22,15 +22,24 @@ const containerEvent = container=>{
             let actividad = crearItem(texto.value)
             guardarDB()
             formularioUI.reset()
-            // console.log(elemento.innerHTML)
             listaActividadUI.innerHTML+=`
                 <div>
                 Actividad : ${actividad.actividad} , estado : ${actividad.estado}
-                <span>Aprobar</span> : 
-                <span>Borrar</span>
+                <span id="aprobar">Aprobar</span> : 
+                <span id="borrar">Borrar</span>
                 </div>
             `
         }
+    })
+    listaActividadUI.addEventListener('click',e=>{
+        e.preventDefault()
+        let i = e.target
+        if(i.id==='aprobar'){
+            console.log(i.textContent)
+        }else if(i.id==='borrar'){
+
+        }
+        
     })
 }
 document.addEventListener('DOMContentLoaded',e=>{
@@ -44,8 +53,8 @@ document.addEventListener('DOMContentLoaded',e=>{
             listaActividadUI.innerHTML+=`
                 <div>
                 Actividad : ${element.actividad} , estado : ${element.estado}
-                <span>Aprobar</span> : 
-                <span>Borrar</span>
+                <span id="aprobar">Aprobar</span> : 
+                <span id="borrar">Borrar</span>
                 </div>
             `
         });
