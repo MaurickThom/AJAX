@@ -13,6 +13,7 @@ const crearItem = (actividad)=>{
 }
 const guardarDB = ()=>{
     localStorage.setItem('items',JSON.stringify(arrayActividades))
+
 }
 const containerEvent = container=>{
     container.addEventListener('submit',e=>{
@@ -24,7 +25,7 @@ const containerEvent = container=>{
             formularioUI.reset()
             listaActividadUI.innerHTML+=`
                 <div>
-                Actividad : ${actividad.actividad} , estado : ${actividad.estado}
+                Actividad : <b>${actividad.actividad}</b> , estado : ${actividad.estado}
                 <span id="aprobar">Aprobar</span> : 
                 <span id="borrar">Borrar</span>
                 </div>
@@ -35,7 +36,8 @@ const containerEvent = container=>{
         e.preventDefault()
         let i = e.target
         if(i.id==='aprobar'){
-            console.log(i.textContent)
+            let l= e.path[1].firstElementChild.innerHTML.trim()
+            
         }else if(i.id==='borrar'){
 
         }
@@ -52,7 +54,7 @@ document.addEventListener('DOMContentLoaded',e=>{
             console.log(element)
             listaActividadUI.innerHTML+=`
                 <div>
-                Actividad : ${element.actividad} , estado : ${element.estado}
+                Actividad :  <b>${element.actividad}</b> , estado : ${element.estado}
                 <span id="aprobar">Aprobar</span> : 
                 <span id="borrar">Borrar</span>
                 </div>
