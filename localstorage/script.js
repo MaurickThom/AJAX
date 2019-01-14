@@ -64,9 +64,9 @@ const containerEvent = container=>{
         let texto = container.querySelector('#actividad')
         if(texto.value!==''){
             let actividad = crearItem(texto.value.trim())
-            guardarDB()
             formularioUI.reset()
             listaActividadUI.innerHTML=generarHTML(listaActividadUI,actividad)
+            guardarDB()
         }
     })
     listaActividadUI.addEventListener('click',e=>{
