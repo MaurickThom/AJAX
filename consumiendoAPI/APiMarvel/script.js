@@ -13,6 +13,12 @@ const getConnection = ()=>{
     
     //esta variable lo pide la API 
     const ts = Date.now() // marca de tiempo
-    const hash = MD5(ts+privateKey+publicKey)
+    const hash = MD5(ts + privateKey + publicKey)
     const URL = `http://gateway.marvel.com/v1/public/characters?ts=${ts}&apikey=${publicKey}&hash=${hash}`
+
+    fetch(URL).then(response=>response.json())
+    .then(response=>{
+        console.log(response)
+    })
 }
+getConnection()
