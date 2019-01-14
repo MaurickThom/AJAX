@@ -1,3 +1,3 @@
 # **API MARVEL**
 
-[Api marvel](https://developer.marvel.com/)
+[Api marvel](https://developer.marvel.com/git)
