@@ -3,4 +3,15 @@
     font-family: sans-serif;
     margin: 0;
 }
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 3em auto;
+}
+.user-input{
+    margin-bottom: 2em;
+}
+.user-button{
 
+}
