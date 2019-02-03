@@ -11,7 +11,22 @@
 }
 .user-input{
     margin-bottom: 2em;
+    border-radius: .5em;
+    border:1px solid #bbb;
+    font-size: 1.5em;
+    padding: .5em;
+    font-weight: bold;
 }
 .user-button{
-
+    font-weight: bold;
+    padding: .8em;
+    background: #36a5c1;
+    color: white;
+    border: 0;
+    font-size: 1.5em;
+    letter-spacing: 2px;
+    cursor: pointer;
+}
+.user-button:active{
+    transform: scale(.8);
 }
