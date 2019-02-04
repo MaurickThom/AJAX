@@ -15,18 +15,19 @@ class DataRetriever{ // recolector de datos
     ajaxCall(url){
         fetch(url)
         .then(response=>response.json())
-        .then(data=>console.log(data))
+        .then(data=>this.dataGenerador.next(data))
         .catch(err=>`Problems retriving information ${err}`)
     }
     *getInfo(userId){
         const user = yield this.ajaxCall(`${DataRetriever.BASE_URL}/users/${userId}`)
-        console.log(user)
+        const post = yield this.ajaxCall(`${DataRetriever.BASE_URL}/posts?userId=${userId}`)
+        console.log(user,post)
     }
     getUser(){
         const userId = DataRetriever.INPUT_ELM.value;
         // console.log(userId)
-        var dataGenerador = this.getInfo(userId)
-        dataGenerador.next()
+        this.dataGenerador = this.getInfo(userId)
+        this.dataGenerador.next()
 
     }
     init(){
