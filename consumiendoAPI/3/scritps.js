@@ -11,5 +11,12 @@ class DataRetriever{ // recolector de datos
     static get BASE_URL(){
         return `https://jsonplaceholder.typicode.com`
     }
+    init(){
+        DataRetriever.TRIGGER_ELM.addEventListener('click',e=>{
+            e.preventDefault()
+            console.log('click')
+        })
+    }
 }
 let dataRetriever  = new DataRetriever();
+dataRetriever.init()
