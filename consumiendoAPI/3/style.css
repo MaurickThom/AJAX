@@ -30,3 +30,7 @@
 .user-button:active{
     transform: scale(.8);
 }
+.user-name{
+    margin-top: 2em;
+    margin-bottom: 2em;
+}

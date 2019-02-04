@@ -24,11 +24,16 @@ class DataRetriever{ // recolector de datos
         .then(data=>this.dataGenerador.next(data))
         .catch(err=>`Problems retriving information`)
     }
-    renderTemplate(user,post){
+    renderTemplate(user,posts){
         const {name,username} = user
         console.log(name," : ",username)
         DataRetriever.USER_CONTAINER.innerHTML=`
-            <strong>${name}</strong> alias<strong>${username}</strong>
+            <strong>${name}</strong> alias <strong>${username}</strong>
+        `
+        DataRetriever.USER_POSTS.innerHTML=`
+            ${posts.map(post=>
+                `<li>${post.title}</li>`
+            ).join(' ')}
         `
     }
     *getInfo(userId){
