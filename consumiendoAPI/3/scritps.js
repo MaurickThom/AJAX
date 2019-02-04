@@ -12,16 +12,29 @@ class DataRetriever{ // recolector de datos
     static get BASE_URL(){
         return `https://jsonplaceholder.typicode.com`
     }
+    static get USER_CONTAINER(){
+        return document.querySelector('.user-name')
+    }
+    static get USER_POSTS(){
+        return document.querySelector('.user-post')
+    }
     ajaxCall(url){
         fetch(url)
         .then(response=>response.json())
         .then(data=>this.dataGenerador.next(data))
-        .catch(err=>`Problems retriving information ${err}`)
+        .catch(err=>`Problems retriving information`)
+    }
+    renderTemplate(user,post){
+        const {name,username} = user
+        console.log(name," : ",username)
+        DataRetriever.USER_CONTAINER.innerHTML=`
+            <strong>${name}</strong> alias<strong>${username}</strong>
+        `
     }
     *getInfo(userId){
         const user = yield this.ajaxCall(`${DataRetriever.BASE_URL}/users/${userId}`)
         const post = yield this.ajaxCall(`${DataRetriever.BASE_URL}/posts?userId=${userId}`)
-        console.log(user,post)
+        this.renderTemplate(user,post)
     }
     getUser(){
         const userId = DataRetriever.INPUT_ELM.value;
