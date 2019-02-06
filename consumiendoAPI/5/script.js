@@ -17,6 +17,22 @@ const productos=[
     {
         nombre:'Melon',
         valor : 500 
+    },
+    {
+        nombre:'Manzana',
+        valor : 500
+    },
+    {
+        nombre:'Papaya',
+        valor : 500 
+    },
+    {
+        nombre:'Totonga',
+        valor : 500
+    },
+    {
+        nombre:'Mandarina',
+        valor : 500 
     }
 ]
 const filtrar = ()=>{
