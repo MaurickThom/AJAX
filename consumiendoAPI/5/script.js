@@ -40,4 +40,4 @@ button.addEventListener('click',e=>{
     filtrar()
 })
 form.addEventListener('keyup',filtrar)
-filtrar()
+filtrar() // al comenzar la aplicacion como no se ele insertó nada sera vacio, entonces ese vacio es null y se pregunta si ese nulo es algun indice del nombre y retorna 0 por lo que se dibuja
