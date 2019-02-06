@@ -16,10 +16,11 @@
     font-weight: bold;
     color: #fff;
     letter-spacing: 2px;
-    background: red;
+    background: rgb(0, 204, 255);
     border: none;
     cursor: pointer;
     transition: all .2s;
+    outline: none;
 }
 .button:active{
     transform: scale(.8);
@@ -29,4 +30,8 @@
     border: 2px solid #bbb;
     border-radius: 30px;
     padding: .5em;
+    transition: all .2s;
+}
+.input-index:focus{
+    border-color: rgb(0, 204, 255);
 }
