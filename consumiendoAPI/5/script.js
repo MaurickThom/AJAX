@@ -21,7 +21,7 @@ const productos=[
 ]
 const filtrar = ()=>{
     // console.log(form.value)
-    const text = form.value.toLowerCase()
+    const text = form.value.toLowerCase().trim()
     items.innerHTML=``
     productos.forEach(producto=>{
         let nombre = producto.nombre.toLowerCase()
