@@ -1,4 +1,4 @@
-# Fetch-vs-Ajax
+# Fetch-and-Ajax
 
 
 ## Preguntas frecuentes
